@@ -1,0 +1,322 @@
+/* Swiss Design System — LOTOS BALANCE Pitchdeck v4 */
+
+:root {
+  --black: #0a0a0a;
+  --white: #fafafa;
+  --gray-100: #f0f0f0;
+  --gray-200: #e0e0e0;
+  --gray-400: #999;
+  --gray-600: #666;
+  --red: #e63329;
+  --blue: #0057b8;
+  --gold: #c8a84e;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 18px; }
+
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* — Slide container — */
+.slide {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 80px 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  page-break-after: always;
+}
+
+.slide--dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+.slide--accent {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* — Grid — */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.grid--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* — Typography — */
+.slide-number {
+  position: absolute;
+  top: 40px;
+  right: 10vw;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.slide--dark .slide-number,
+.slide--accent .slide-number {
+  color: rgba(255,255,255,0.4);
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--gray-600);
+}
+
+.slide--dark h3,
+.slide--accent h3 {
+  color: rgba(255,255,255,0.5);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 720px;
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+.small {
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.slide--dark .small {
+  color: var(--gray-400);
+}
+
+strong { font-weight: 700; }
+
+.highlight {
+  color: var(--red);
+}
+
+.slide--dark .highlight {
+  color: var(--gold);
+}
+
+/* — Divider — */
+.rule {
+  width: 60px;
+  height: 3px;
+  background: var(--red);
+  margin-bottom: 32px;
+}
+
+.slide--dark .rule {
+  background: var(--gold);
+}
+
+/* — Lists — */
+ul, ol {
+  padding-left: 1.2em;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* — Tables — */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 0.82rem;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--black);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.slide--dark th {
+  border-bottom-color: var(--white);
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+
+.slide--dark td {
+  border-bottom-color: rgba(255,255,255,0.15);
+}
+
+.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* — Blockquote — */
+blockquote {
+  border-left: 3px solid var(--red);
+  padding: 16px 24px;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-size: 1rem;
+  background: var(--gray-100);
+}
+
+.slide--dark blockquote {
+  border-left-color: var(--gold);
+  background: rgba(255,255,255,0.05);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+
+.slide--dark blockquote cite {
+  color: var(--gray-400);
+}
+
+/* — Stat blocks — */
+.stat {
+  text-align: left;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-600);
+  margin-top: 8px;
+  display: block;
+}
+
+.slide--dark .stat-label {
+  color: var(--gray-400);
+}
+
+/* — Callout box — */
+.callout {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--gray-100);
+  border-left: 3px solid var(--red);
+  max-width: 760px;
+}
+
+.slide--dark .callout {
+  background: rgba(255,255,255,0.05);
+  border-left-color: var(--gold);
+}
+
+/* — SVG charts — */
+svg text {
+  font-family: var(--font);
+}
+
+.chart-container {
+  margin: 28px 0;
+}
+
+/* — Navigation — */
+nav {
+  position: fixed;
+  bottom: 30px;
+  right: 10vw;
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+}
+
+nav a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+nav a:hover {
+  background: var(--red);
+}
+
+/* — Footer — */
+.footer {
+  position: absolute;
+  bottom: 40px;
+  left: 10vw;
+  font-size: 0.7rem;
+  color: var(--gray-400);
+  letter-spacing: 0.05em;
+}
+
+.slide--dark .footer {
+  color: rgba(255,255,255,0.3);
+}
+
+/* — Responsive — */
+@media (max-width: 900px) {
+  .slide { padding: 40px 6vw; }
+  h1 { font-size: 2.2rem; }
+  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .grid--3 { grid-template-columns: 1fr; }
+  table { font-size: 0.75rem; }
+}

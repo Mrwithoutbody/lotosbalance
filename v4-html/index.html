@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOTOS BALANCE — Pitch Deck v4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<iframe id="frame" src="01-cover.html" style="width:100vw;height:100vh;border:none;display:block;"></iframe>
+
+<nav id="nav"></nav>
+
+<script>
+const slugs = [
+  'cover','problem','solution','day','status',
+  'validation','market','competition','model',
+  'roadmap','team','legal','ask','vision','contact'
+];
+const TOTAL = slugs.length;
+const frame = document.getElementById('frame');
+const nav = document.getElementById('nav');
+let current = 1;
+
+function go(n) {
+  n = Math.max(1, Math.min(TOTAL, n));
+  current = n;
+  frame.src = String(n).padStart(2,'0') + '-' + slugs[n-1] + '.html';
+  updateNav();
+}
+
+function updateNav() {
+  nav.innerHTML = '';
+  const prev = document.createElement('a');
+  prev.textContent = '←';
+  prev.href = '#';
+  prev.onclick = e => { e.preventDefault(); go(current-1); };
+  nav.appendChild(prev);
+
+  const label = document.createElement('a');
+  label.textContent = current + '/' + TOTAL;
+  label.href = '#';
+  label.style.width = 'auto';
+  label.style.padding = '0 12px';
+  label.style.pointerEvents = 'none';
+  nav.appendChild(label);
+
+  const next = document.createElement('a');
+  next.textContent = '→';
+  next.href = '#';
+  next.onclick = e => { e.preventDefault(); go(current+1); };
+  nav.appendChild(next);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(current+1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); go(current-1); }
+});
+
+updateNav();
+</script>
+</body>
+</html>

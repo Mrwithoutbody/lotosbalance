@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"></head><body>
+<div class="slide slide--dark">
+  <span class="slide-number">09 / 15</span>
+  <h3>8. Model biznesowy</h3>
+  <div class="rule"></div>
+  <h1 style="max-width:780px;">Cztery strumienie. Jedna własna warstwa płatności.</h1>
+
+  <table style="margin-top:8px;">
+    <thead>
+      <tr><th>#</th><th>Strumień</th><th>Mechanika</th><th>Take rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Subskrypcja premium</strong></td><td>Freemium: bazowa praktyka + 3 afirmacje/dzień. Premium: pełny katalog, nielimit afirmacji, programy, AI-asystent.</td><td>19 / 39 PLN/mies.</td></tr>
+      <tr><td>2</td><td><strong>Sprzedaż treści twórcy</strong></td><td>Twórca wrzuca, ustawia cenę, dostaje link. Follower płaci BLIKiem. Twórca dostaje 95%.</td><td><strong style="color:var(--gold);">5% GMV</strong></td></tr>
+      <tr><td>3</td><td><strong>Booking specjalisty</strong></td><td>User bookuje, płaci w aplikacji. Specjalista zawsze 82%.</td><td><strong style="color:var(--gold);">18%</strong> brutto / 8% jeśli referred</td></tr>
+      <tr><td>4</td><td><strong>Pakiety B2B / HR</strong></td><td>Firmy kupują dostęp dla pracowników (subskrypcja + bookingi + treści).</td><td>Kontrakty roczne</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid" style="margin-top:24px;">
+    <div>
+      <h2 style="font-size:1.2rem;">Kto ile dostaje</h2>
+      <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+
+        <!-- Donut: treści -->
+        <div style="text-align:center;">
+          <svg width="140" height="140" viewBox="0 0 150 150">
+            <g transform="rotate(-90 75 75)" fill="none" stroke-width="22">
+              <circle cx="75" cy="75" r="55" stroke="rgba(255,255,255,0.22)" stroke-dasharray="328.3 17.3" stroke-dashoffset="-17.3"/>
+              <circle cx="75" cy="75" r="55" stroke="var(--gold)" stroke-dasharray="17.3 328.3" stroke-dashoffset="0"/>
+            </g>
+            <text x="75" y="80" text-anchor="middle" fill="var(--gold)" font-size="24" font-weight="700">5%</text>
+            <text x="75" y="97" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9" letter-spacing="0.05em">PLATFORMA</text>
+          </svg>
+          <p style="font-size:0.8rem;margin:6px 0 0;max-width:none;">Treści twórcy<br><strong>twórca 95%</strong> · platforma 5%</p>
+        </div>
+
+        <!-- Donut: booking -->
+        <div style="text-align:center;">
+          <svg width="140" height="140" viewBox="0 0 150 150">
+            <g transform="rotate(-90 75 75)" fill="none" stroke-width="22">
+              <circle cx="75" cy="75" r="55" stroke="rgba(255,255,255,0.22)" stroke-dasharray="283.4 62.2" stroke-dashoffset="-62.2"/>
+              <circle cx="75" cy="75" r="55" stroke="var(--gold)" stroke-dasharray="62.2 283.4" stroke-dashoffset="0"/>
+            </g>
+            <text x="75" y="80" text-anchor="middle" fill="var(--gold)" font-size="24" font-weight="700">18%</text>
+            <text x="75" y="97" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9" letter-spacing="0.05em">PLATFORMA</text>
+          </svg>
+          <p style="font-size:0.8rem;margin:6px 0 0;max-width:none;">Booking<br><strong>specjalista 82%</strong> · platforma 18%</p>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--gray-400);margin-top:12px;">Przez link twórcy: platforma <strong>8%</strong>, twórca <strong style="color:var(--gold);">10%</strong>, specjalista 82% (12 mies. od rejestracji). Partner: 8% od sprzedaży zaproszonego twórcy.</p>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;">lotosPayments — własna warstwa</h2>
+      <p style="font-size:0.9rem;">Wszystkie transakcje przez <strong style="color:var(--gold);">lotosPayments</strong> &mdash; warstwę na protokole <strong>x402</strong> (Coinbase + Cloudflare + Linux Foundation). User: BLIK / przelew, natychmiastowo. Pod spodem: settlement na Base&nbsp;L2, koszt transakcji ~0.01 PLN.</p>
+      <ul style="padding-left:1em;font-size:0.88rem;">
+        <li><strong>Natychmiastowy settlement</strong> (vs 14&ndash;30 dni Stripe)</li>
+        <li><strong>Transparentny split payment</strong> &mdash; obie strony widzą tę samą kwotę</li>
+        <li><strong>Marginalny koszt transakcji</strong> &mdash; więcej marży zostaje na platformie</li>
+        <li>Komponent reużywalny &mdash; docelowo poza ekosystemem LOTOS BALANCE</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="callout" style="margin-top:24px;">
+    <strong>Unit economics (hipoteza):</strong> ARPU blended ~14&ndash;22 PLN/mies., CAC organiczny przez twórców ~5&ndash;10 PLN, blended CAC ~15&ndash;25 PLN. <strong>LTV/CAC &gt; 5&times;</strong> przy retencji 9+ mies. Marża brutto &gt; 75%.
+  </p>
+
+  <div class="footer">LOTOS BALANCE</div>
+</div>
+</body></html>
